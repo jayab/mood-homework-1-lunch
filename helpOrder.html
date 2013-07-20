@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>订餐</title>
+	<link rel="stylesheet"  href="lib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.css" />
+	<style>
+		table{
+			width:100%;
+		}
+	</style>
+    <script src="lib/jquery.js"></script>
+	<script src="lib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+    <script src='data/foods.json' type='text/javascript'></script>
+    <script src='data/restaurants.json' type='text/javascript'></script>
+    <script src='data/users.json' type='text/javascript'></script>
+
+    <script src="js/application.js"></script>
+	<script type="text/javascript">
+			$(function(){
+				readUser();
+				readRes();
+				readFood();
+			})
+    </script>
+	
+</head>
+<body>
+	<div data-role="page" id="home" data-theme="c">
+		<div data-role='header'>
+			<a data-role="button" data-theme="a" data-rel="back">Back</a>
+			<h1>订餐</h1>
+		</div>
+		<div data-role='content'>
+			<table data-role="table" data-mode="columntoggle">
+				<tr>
+					<th align="left">人：</th>
+				</tr>
+				<tr>
+					<td><input type="text" id="user" class="user"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="choseUser" type="button"  value="选人" onClick="goPage('choosePerson.html')" >
+					</td>
+				</tr>
+				<tr>
+					<th align="left">餐厅：</th>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" id="res" class="res" >
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input id="choseRes" type="button" value="选餐厅" onClick="goPage('chooseRestaurant.html')" >
+					</td>
+				</tr>
+				<tr>
+					<th align="left">套餐：</th>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" id="food" class="food" >
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input id="choseFood" type="button" value="选套餐" onClick="goPage('chooseFood.html')" >
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input id="submit" type="button" value="确认" onClick="btnVerify()" >
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</body>
+</html>

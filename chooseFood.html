@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>订餐</title>
+	<title>选套餐</title>
 	<link rel="stylesheet"  href="lib/jquery.mobile-1.2.0/jquery.mobile-1.2.0.min.css" />
 
     <script src="lib/jquery.js"></script>
@@ -16,16 +16,16 @@
     <script src="js/application.js"></script>
 
 </head>
-<body>
-   <div data-role="page" id="home" data-theme="c">
+<body onload="initFood()">
+	<div data-role="page" id="home" data-theme="c">
 		<div data-role='header'>
-			<h1>订餐</h1>
+			<a data-role="button" data-theme="a" data-rel="back">Back</a>
+			<h1>选套餐</h1>
 		</div>
 		<div data-role='content'>
-			<form>
-				<input type="button" value="帮订餐" onclick="goPage('helpOrder.html')">
-				<input type="button" value="看订单" onclick="goPage('listOrder.html')">
-			</form>
+			<ul id="ulFoodList" data-role="listview" data-inset="true" >
+	
+			</ul>	
 		</div>
 	</div>
 </body>
